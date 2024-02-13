@@ -5,6 +5,7 @@ function App() {
     <div className="card">
       <Avatar />
       <Intro />
+      <SkillList />
     </div>
   );
 }
@@ -22,6 +23,25 @@ function Intro() {
         supporting music personalities and going to concerts - making it her
         personality.
       </div>
+    </div>
+  );
+}
+
+function SkillList() {
+  return (
+    <div className="skill-list">
+      <Skill skillName="HTML+CSS" color="lightskyblue" />
+      <Skill skillName="JavaScript" color="bisque" />
+      <Skill skillName="React JS" color="mediumpurple" />
+      <Skill skillName="TypeScript" color="moccasin" />
+    </div>
+  );
+}
+
+function Skill(props) {
+  return (
+    <div className="skill" style={{ backgroundColor: props.color }}>
+      {props.skillName}
     </div>
   );
 }
