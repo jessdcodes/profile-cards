@@ -3,9 +3,14 @@ import "./App.css";
 function App() {
   return (
     <div className="card">
+      <Avatar />
       <Intro />
     </div>
   );
+}
+
+function Avatar() {
+  return <img className="avatar" src="avatar.png" alt="Self-portrait" />;
 }
 
 function Intro() {
