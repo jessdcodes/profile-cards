@@ -4,8 +4,10 @@ function App() {
   return (
     <div className="card">
       <Avatar />
-      <Intro />
-      <SkillList />
+      <div className="data">
+        <Intro />
+        <SkillList />
+      </div>
     </div>
   );
 }
@@ -18,11 +20,11 @@ function Intro() {
   return (
     <div>
       <h1>Jessica Dionisio</h1>
-      <div className="data">
+      <p>
         Frontend engineer at Accenture. Passionate about her fruit yogurt and
         supporting music personalities and going to concerts - making it her
         personality.
-      </div>
+      </p>
     </div>
   );
 }
