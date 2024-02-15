@@ -1,5 +1,28 @@
 import "./App.css";
 
+const skillList = [
+  {
+    name: "HTML+CSS",
+    color: "lightskyblue",
+    emoji: "🍊",
+  },
+  {
+    name: "JavaScript",
+    color: "bisque",
+    emoji: "🥑",
+  },
+  {
+    name: "React JS",
+    color: "mediumpurple",
+    emoji: "🍑",
+  },
+  {
+    name: "TypeScript",
+    color: "moccasin",
+    emoji: "🍉",
+  },
+];
+
 function App() {
   return (
     <div className="card">
@@ -32,19 +55,18 @@ function Intro() {
 function SkillList() {
   return (
     <div className="skill-list">
-      <Skill skillName="HTML+CSS" color="lightskyblue" emoji="🍊" />
-      <Skill skillName="JavaScript" color="bisque" emoji="🥑" />
-      <Skill skillName="React JS" color="mediumpurple" emoji="🍑" />
-      <Skill skillName="TypeScript" color="moccasin" emoji="🍉" />
+      {skillList.map((skill) => (
+        <Skill key={skill.name} skillObj={skill} />
+      ))}
     </div>
   );
 }
 
-function Skill(props) {
+function Skill({ skillObj }) {
   return (
-    <div className="skill" style={{ backgroundColor: props.color }}>
-      <span>{props.skillName}</span>
-      <span>{props.emoji}</span>
+    <div className="skill" style={{ backgroundColor: skillObj.color }}>
+      <span>{skillObj.name}</span>
+      <span>{skillObj.emoji}</span>
     </div>
   );
 }
