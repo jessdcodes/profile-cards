@@ -13,7 +13,7 @@ function App() {
 }
 
 function Avatar() {
-  return <img className="avatar" src="avatar.png" alt="Self-portrait" />;
+  return <img className="avatar" src="avatar.png" alt="Jessica Dionisio" />;
 }
 
 function Intro() {
@@ -32,10 +32,10 @@ function Intro() {
 function SkillList() {
   return (
     <div className="skill-list">
-      <Skill skillName="HTML+CSS" color="lightskyblue" />
-      <Skill skillName="JavaScript" color="bisque" />
-      <Skill skillName="React JS" color="mediumpurple" />
-      <Skill skillName="TypeScript" color="moccasin" />
+      <Skill skillName="HTML+CSS" color="lightskyblue" emoji="🍊" />
+      <Skill skillName="JavaScript" color="bisque" emoji="🥑" />
+      <Skill skillName="React JS" color="mediumpurple" emoji="🍑" />
+      <Skill skillName="TypeScript" color="moccasin" emoji="🍉" />
     </div>
   );
 }
@@ -43,7 +43,8 @@ function SkillList() {
 function Skill(props) {
   return (
     <div className="skill" style={{ backgroundColor: props.color }}>
-      {props.skillName}
+      <span>{props.skillName}</span>
+      <span>{props.emoji}</span>
     </div>
   );
 }
