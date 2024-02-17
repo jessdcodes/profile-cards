@@ -4,22 +4,22 @@ const skillList = [
   {
     name: "HTML+CSS",
     color: "lightskyblue",
-    emoji: "🍊",
+    level: "advanced",
   },
   {
     name: "JavaScript",
     color: "bisque",
-    emoji: "🥑",
+    level: "intermediate",
   },
   {
     name: "React JS",
     color: "mediumpurple",
-    emoji: "🍑",
+    level: "intermediate",
   },
   {
     name: "TypeScript",
     color: "moccasin",
-    emoji: "🍉",
+    level: "beginner",
   },
 ];
 
@@ -66,7 +66,11 @@ function Skill({ skillObj }) {
   return (
     <div className="skill" style={{ backgroundColor: skillObj.color }}>
       <span>{skillObj.name}</span>
-      <span>{skillObj.emoji}</span>
+      <span>
+        {skillObj.level === "beginner" && "🍊"}
+        {skillObj.level === "intermediate" && "🥑"}
+        {skillObj.level === "advanced" && "🍑"}
+      </span>
     </div>
   );
 }
