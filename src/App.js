@@ -2,22 +2,22 @@ import "./App.css";
 
 const skillList = [
   {
-    name: "HTML+CSS",
+    skillName: "HTML+CSS",
     color: "lightskyblue",
     level: "advanced",
   },
   {
-    name: "JavaScript",
+    skillName: "JavaScript",
     color: "bisque",
     level: "intermediate",
   },
   {
-    name: "React JS",
+    skillName: "React JS",
     color: "mediumpurple",
     level: "intermediate",
   },
   {
-    name: "TypeScript",
+    skillName: "TypeScript",
     color: "moccasin",
     level: "beginner",
   },
@@ -56,20 +56,25 @@ function SkillList() {
   return (
     <div className="skill-list">
       {skillList.map((skill) => (
-        <Skill key={skill.name} skillObj={skill} />
+        <Skill
+          key={skill.skillName}
+          skillName={skill.skillName}
+          level={skill.level}
+          color={skill.color}
+        />
       ))}
     </div>
   );
 }
 
-function Skill({ skillObj }) {
+function Skill({ skillName, level, color }) {
   return (
-    <div className="skill" style={{ backgroundColor: skillObj.color }}>
-      <span>{skillObj.name}</span>
+    <div className="skill" style={{ backgroundColor: color }}>
+      <span>{skillName}</span>
       <span>
-        {skillObj.level === "beginner" && "🍊"}
-        {skillObj.level === "intermediate" && "🥑"}
-        {skillObj.level === "advanced" && "🍑"}
+        {level === "beginner" && "🍊"}
+        {level === "intermediate" && "🥑"}
+        {level === "advanced" && "🍑"}
       </span>
     </div>
   );
